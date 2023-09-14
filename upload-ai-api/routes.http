@@ -3,7 +3,7 @@ GET http://localhost:3333/prompts
 
 ###
 
-# @name upload
+# @name upload-video
 POST http://localhost:3333/videos
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
@@ -17,11 +17,11 @@ Content-Type: audio/mpeg
 ###
 
 # @name create-transcription
-POST http://localhost:3333/videos/a8d2df0d-1774-4928-a3f9-bc83729c9603/transcription
+POST http://localhost:3333/videos/5e863723-fb31-451a-9deb-3cb5134b3174/transcription
 Content-Type: application/json
 
 {
-  "prompt": "clean architecture, ddd"
+    "prompt": "engenharia de software, importante"
 }
 
 ###
@@ -30,8 +30,8 @@ Content-Type: application/json
 POST http://localhost:3333/ai/complete
 Content-Type: application/json
 
-{
-  "videoId": "a8d2df0d-1774-4928-a3f9-bc83729c9603",
-  "temperature": 0.5,
-  "prompt": "Gere um resumo da transcrição do vídeo informada a seguir: '''{transcription}'''"
+{   
+    "videoId": "5e863723-fb31-451a-9deb-3cb5134b3174",
+    "temperature": 0.5,
+    "prompt": "Gere um resumo sucinto da trasncrição do vídeo informado a seguir: '''{transcription}'''"
 }
